@@ -1,0 +1,810 @@
+{
+  "info": {
+    "_postman_id": "6a757b06-ffb5-4e6f-b707-9b0c98526b74",
+    "name": "API Clínica Médica",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "59311970",
+    "_collection_link": "https://go.postman.co/collection/59311970-6a757b06-ffb5-4e6f-b707-9b0c98526b74?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Médico",
+      "item": [
+        {
+          "name": "Cadastrar Médico",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome\": \"Carlos Silva\",\r\n    \"crm\": \"123456\",\r\n    \"especialidade\": \"Cardiologia\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/medico",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "medico"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Deletar Médico",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/medico/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "medico",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar Médico",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"especialidade\": \"Neurologia\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/medico/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "medico",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Médicos",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/medico",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "medico"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar Médicos por id",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/medico/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "medico",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Paciente",
+      "item": [
+        {
+          "name": "Cadastrar Paciente",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Mariana Costa\",\n  \"cpf\": \"98765432100\",\n  \"data_nascimento\": \"1995-08-20\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/paciente",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "paciente"
+              ]
+            },
+            "description": "Cadastra um paciente de exemplo."
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Pacientes",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/paciente",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "paciente"
+              ]
+            },
+            "description": "Lista todos os pacientes cadastrados."
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar Paciente por ID",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/paciente/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "paciente",
+                "1"
+              ]
+            },
+            "description": "Busca paciente pelo ID 1."
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar Paciente",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"João Oliveira Atualizado\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/paciente/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "paciente",
+                "1"
+              ]
+            },
+            "description": "Atualiza parcialmente o paciente de ID 1."
+          },
+          "response": []
+        },
+        {
+          "name": "Deletar Paciente",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/paciente/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "paciente",
+                "1"
+              ]
+            },
+            "description": "Exclui paciente de ID 1."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Consulta",
+      "item": [
+        {
+          "name": "Cadastrar Consulta",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data_hora\": \"2026-11-16 10:00:00\",\n  \"motivo\": \"Consulta de rotina\",\n  \"status\": \"agendada\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/consulta",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "consulta"
+              ]
+            },
+            "description": "Cadastre no mínimo 5 consultas, alterando data_hora e motivo em cada envio. Não informe FKs no body."
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Consultas",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/consulta",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "consulta"
+              ]
+            },
+            "description": "Lista todas as consultas."
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar Consulta por ID",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/consulta/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "consulta",
+                "1"
+              ]
+            },
+            "description": "Busca consulta por ID, com dados de médico e paciente."
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar Consulta",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PATCH",
+            "header": [
+              {
+                "value": "application/json",
+                "key": "Content-Type"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"motivo\": \"Retorno cardiologico\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/consulta/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "consulta",
+                "1"
+              ]
+            },
+            "description": "Atualiza parcialmente a consulta de ID 1."
+          },
+          "response": []
+        },
+        {
+          "name": "Deletar Consulta",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/consulta/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "consulta",
+                "1"
+              ]
+            },
+            "description": "Exclui consulta de ID 1."
+          },
+          "response": []
+        },
+        {
+          "name": "Vincular Médico à Consulta",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/consulta/1/medico/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "consulta",
+                "1",
+                "medico",
+                "1"
+              ]
+            },
+            "description": "Vincula médico 1 à consulta 1. Ambos precisam existir."
+          },
+          "response": []
+        },
+        {
+          "name": "Remover Médico da Consulta",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/consulta/1/remover-medico",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "consulta",
+                "1",
+                "remover-medico"
+              ]
+            },
+            "description": "Remove o vínculo de médico da consulta 1."
+          },
+          "response": []
+        },
+        {
+          "name": "Vincular Paciente à Consulta",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/consulta/1/paciente/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "consulta",
+                "1",
+                "paciente",
+                "1"
+              ]
+            },
+            "description": "Vincula paciente 1 à consulta 1. Ambos precisam existir."
+          },
+          "response": []
+        },
+        {
+          "name": "Remover Paciente da Consulta",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/consulta/1/remover-paciente",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "consulta",
+                "1",
+                "remover-paciente"
+              ]
+            },
+            "description": "Remove o vínculo de paciente da consulta 1."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Cadastros iniciais - executar uma vez",
+      "item": [
+        {
+          "name": "Cadastrar Médico 2 - Ana Souza",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Ana Souza\",\n  \"crm\": \"234567\",\n  \"especialidade\": \"Cardiologia\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/medico",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "medico"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cadastrar Médico 3 - Pedro Almeida",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Pedro Almeida\",\n  \"crm\": \"345678\",\n  \"especialidade\": \"Dermatologia\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/medico",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "medico"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cadastrar Consulta 2",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data_hora\": \"2026-11-17 09:00:00\",\n  \"motivo\": \"Consulta de retorno\",\n  \"status\": \"agendada\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/consulta",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "consulta"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cadastrar Consulta 3",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "value": "application/json",
+                "key": "Content-Type"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data_hora\": \"2026-11-18 10:30:00\",\n  \"motivo\": \"Avaliação clínica inicial\",\n  \"status\": \"agendada\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/consulta",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "consulta"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cadastrar Consulta 4",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "value": "application/json",
+                "key": "Content-Type"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data_hora\": \"2026-11-19 14:00:00\",\n  \"motivo\": \"Exame de rotina\",\n  \"status\": \"agendada\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/consulta",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "consulta"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cadastrar Consulta 5",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data_hora\": \"2026-11-20 15:30:00\",\n  \"motivo\": \"Acompanhamento clínico\",\n  \"status\": \"agendada\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/consulta",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "consulta"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cadastrar Paciente 3 - Exemplo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "value": "application/json",
+                "key": "Content-Type"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Paciente Exemplo 3\",\n  \"cpf\": \"11111111111\",\n  \"data_nascimento\": \"1998-03-12\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/paciente",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "paciente"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cadastrar Paciente 3 - Exemplo",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
